@@ -1,0 +1,40 @@
+/*NULL*/
+h1,h2,h3,p{margin: 0;}
+/*NULL*/
+
+.wrapper{
+    max-width: 670px;
+}
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 0px;
+    background-color: #46b1de;
+    margin-bottom: 15px;
+}
+.article{
+    background-color: olivedrab;
+}
+.article__title{
+    margin-bottom: 10px;
+}
+.article__title h2{
+    text-align: center;
+}
+.article__title h2{
+    text-align: center;
+}
+.article__body{
+ border: 4px solid #000;
+ width: fit-content;
+ margin: 0 auto 10px auto;
+ padding: 10px;
+ background-color: #fff;
+}
+.article__description{
+    margin-bottom: 5px;
+}
+.article__actions{
+    display: flex;
+    justify-content: space-around;
+}
