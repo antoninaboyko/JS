@@ -4,15 +4,20 @@ import ArticleActions from "./components/ArticleActions";
 import Article from "./components/Article";
 
 let EN = {
-  
+  title: 'NVIDIA NEWS',
+  title_text: 'NVIDIA Accelerated AI on Azure',
   description: 'Article description:',
   description_text: 'NVIDIA on Azure is bringing AI, networking, and high-performance computing to the enterprise.',
-  current_lang: 'EN'
+  current_lang: 'EN',
+  button_read: 'Read'
 }
 let UA = {
+  title: 'НОВИНИ NVIDIA',
+  title_text: 'Прискорений штучний інтелект NVIDIA в Azure',
   description: 'Опис статті:',
   description_text: 'NVIDIA на Azure надає підприємствам можливості штучного інтелекту, мереж та високопродуктивних обчислень.',
-  current_lang: 'UA'
+  current_lang: 'UA',
+  button_read: 'Читати'
 }
 
 let langBtns;
@@ -48,13 +53,15 @@ class App extends Component{
   render(){
     return (
       <div className="wrapper">
-        <h1 className="title">NVIDIA news</h1>
-          <Article lang={this.state.lang}>
+
+        {this.props.children}
+        <h1 className="title">{this.state.lang.title}</h1>
+        <Article lang={this.state.lang}>
           <div className="article__title">
-            <h2>NVIDIA Accelerated AI on Azure</h2>
+            <h2>{this.state.lang.title_text}</h2>
           </div> 
           </Article>
-        <div className="lang">
+          <div className="lang">
           <button onClick={this.SetLangUA.bind(this)} 
           className="lang-btn">UA</button>
           <button onClick={this.SetLangEN.bind(this)}
