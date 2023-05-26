@@ -29,7 +29,7 @@ h1,h2,h3,p{margin: 0;}
  width: fit-content;
  margin: 0 auto 10px auto;
  padding: 10px;
- background-color: #fff;
+ background-color: olivedrab;
 }
 .article__description{
     margin-bottom: 5px;
@@ -37,4 +37,24 @@ h1,h2,h3,p{margin: 0;}
 .article__actions{
     display: flex;
     justify-content: space-around;
+}
+
+.article__btn{
+    font-weight: 600;
+    padding: 5px 20px;
+    background-color: orange;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.article__author{
+    margin: 30px 10px 0 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 16px;
+    font-weight: 600;
 }
