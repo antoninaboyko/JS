@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import ArticleBody from "./components/ArticleBody";
 import ArticleActions from "./components/ArticleActions";
 import Article from "./components/Article";
+import LangContext from "./components/lang-context";
 
 let EN = {
   title: 'NVIDIA NEWS',
@@ -50,23 +51,21 @@ class App extends Component{
     this.setState({lang: UA})
   }
 
-  render(){
+  render() {
     return (
       <div className="wrapper">
-
         {this.props.children}
         <h1 className="title">{this.state.lang.title}</h1>
-        <Article lang={this.state.lang}>
-          <div className="article__title">
-            <h2>{this.state.lang.title_text}</h2>
-          </div> 
-          </Article>
-          <div className="lang">
-          <button onClick={this.SetLangUA.bind(this)} 
-          className="lang-btn">UA</button>
-          <button onClick={this.SetLangEN.bind(this)}
-           className="lang-btn">EN</button>
+        <LangContext.Provider value={this.state.lang}>
+          <Article />
+        </LangContext.Provider>
+        <div className="lang">
+          <button onClick={this.SetLangUA.bind(this)} className="lang-btn">UA</button>
+          <button onClick={this.SetLangEN.bind(this)} className="lang-btn">EN</button>
         </div>
-      </div> )}}
+      </div>
+    );
+  }
+}
 
 export default App;
