@@ -33,6 +33,17 @@ class App extends Component{
   componentDidMount(){
   langBtns = document.querySelectorAll('.lang-btn');
   langBtns[1].classList.add('active');
+  
+  let saveLang = localStorage.getItem('lang');
+  if(saveLang) {
+    if (saveLang === 'UA') {
+      this.setState({lang: UA});
+      langBtns[0].classList.add('active');
+    } else {
+      this.setState({lang: EN});
+      langBtns[1].classList.add('active');
+    }
+  }
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -44,10 +55,12 @@ class App extends Component{
   } 
 
   SetLangEN(){
+    localStorage.setItem('lang', 'EN');
     this.setState({lang: EN})
   }
 
   SetLangUA(){
+    localStorage.setItem('lang', 'UA');
     this.setState({lang: UA})
   }
 
