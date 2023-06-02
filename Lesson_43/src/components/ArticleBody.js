@@ -1,8 +1,9 @@
 import React from "react";
 
 function ArticleBody(props) {
+  const currentLang = props.lang;
 return (
-        <div className="article__body">
+        <div className={`article__body ${ !props.show ? props.read : ''}`}>
           <h3 className="article__description">
             {!props.show && props.text.description }
           </h3>
