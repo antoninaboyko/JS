@@ -8,7 +8,7 @@ return (
             {!props.show && props.text.description }
           </h3>
           <p className="article__text">
-            {props.show ? props.text.content : props.text.preview }
+            {props.show ? props.text[currentLang].content : props.text[currentLang].preview }
           </p>
         </div>)}
 export default ArticleBody;
