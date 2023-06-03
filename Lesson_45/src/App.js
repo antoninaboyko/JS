@@ -78,12 +78,16 @@ return (
       <div className='product'>
       <span>{`Coffe: ${products.coffe}`}</span>
       <button onClick={addCoffe}>Add</button>
+      {products.coffe > 0 && (
       <button onClick={removeCoffe}>Remove</button>
+      )}
       </div>
       <div className='product'>
       <span>{`Sugar: ${products.sugar}`}</span>
         <button onClick={addSugar}>Add</button>
+        {products.sugar > 0 && (
         <button onClick={removeSugar}>Remove</button>
+        )}
       </div>
       <div className='save'>
           <button onClick={save}>SAVE</button>
