@@ -21,8 +21,8 @@ const addProducts = (setNewProducts, newProducts, isValidateName, isValidatePric
   } 
   if (isValidateName && isValidatePrice){
     let key = Math.random();
-    setNewProducts((prev)=>({...prev, id: key, image: no_foto}));
-    setProducts((prev) => ([...prev, newProducts]));
+    setNewProducts((prev)=>({...prev, id: key}));
+    setProducts((prev) => ([...prev, { ...newProducts, image: no_foto}]));
     setNewProducts((prev)=>({...prev, name: '', price: ''}));
   }
 }
