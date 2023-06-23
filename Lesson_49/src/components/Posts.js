@@ -16,7 +16,7 @@ const About = () => {
     <div className='posts-body'>
       {
         posts.map(item => (
-          <Link key={item.id} to={`/post/${item.id}`}>
+          <Link data-testid="link" key={item.id} to={`/post/${item.id}`}>
             <li>{item.title}</li>
           </Link>
         ))
