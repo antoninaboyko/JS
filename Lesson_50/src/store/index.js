@@ -57,8 +57,21 @@ const couterReducer = (state = {coffee: 0, sugar: 0, isLoggedIn: false}, action)
             isLoggedIn: false,
          }
     }
-    
-    return state
+    if(action.type === 'save'){
+        return {
+          coffee: +action.setCoffee,
+          sugar: +action.setSugar,
+          isLoggedIn: state.isLoggedIn,
+        };
+      }
+      if(action.type === 'clear'){
+        return {
+          coffee: 0,
+          sugar: 0,
+          isLoggedIn: state.isLoggedIn,
+        };
+      }
+      return state;
 }
 
 const store = legacy_createStore(couterReducer); 
