@@ -1,0 +1,8 @@
+<div class="body">
+<input type="text" placeholder="Name"  [value]="nameInputValue" (input)="onName($event)">
+<textarea type="text" placeholder="Status" [value]="statusInputValue" (input)="onStatus($event)"></textarea>
+<input type="text" placeholder="Avatar URL" [value]="imgInputValue" (input)="onAvatar($event)">
+<button type="button" 
+(click)="addNewUser(nameInputValue, statusInputValue, imgInputValue)"
+>Add user</button>
+</div>
