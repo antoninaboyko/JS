@@ -1,0 +1,9 @@
+<main>
+  <button (click)="toggleSort()">Sort</button>
+  <app-user 
+  *ngFor="let user of users  | filter:sort "
+  [name]="user.name" 
+  [status]="user.status"
+  [url]="user.url"
+></app-user>
+</main>
