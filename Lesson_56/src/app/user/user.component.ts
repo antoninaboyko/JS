@@ -15,7 +15,7 @@ export class UserComponent {
   @Input() img = ''
   
   constructor(
-    public groupNameService: GroupNameService,
+    public groupNameService: GroupNameService
     ){}
     get groupName(): string {
       return this.groupNameService.groupName;
