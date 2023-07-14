@@ -5,7 +5,6 @@ import { GroupNameService } from '../service/group-name.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  providers: [GroupNameService],
 })
 export class HeaderComponent {
   constructor(

@@ -1,10 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, ComponentRef} from '@angular/core';
 import { UsersService } from './service/developer-rating.service';
-// import { PopUpComponent } from './pop-up/pop-up.component';
-// import { TeamRatingService } from './service/team-rating.service';
-
-
-
+import { PopUpComponent } from './pop-up/pop-up.component'
 
 @Component({
   selector: 'app-root',
@@ -15,16 +11,25 @@ import { UsersService } from './service/developer-rating.service';
 })
 export class AppComponent {
 rating: any[];
-constructor(public developerRatingService: UsersService){
+constructor(
+  public developerRatingService: UsersService,
+
+  ){
+
   this.rating = this.developerRatingService.users;
 };
-// @ViewChild('popUp', { read: ViewContainerRef })
-//   private viewRef!: ViewContainerRef
-//   private componentRef!: ComponentRef<PopUpComponent>
+users = [];
+  @ViewChild('popUp', { read: ViewContainerRef })
+  private viewRef!: ViewContainerRef
+  private componentRef!: ComponentRef<PopUpComponent>
+  
+  
 
   
-//   showPopUp(){
-//     this.viewRef.createComponent(PopUpComponent);
-//   }
+  showPopUp(){
+    this.viewRef.createComponent(PopUpComponent);
 
+    
+    this.componentRef.instance.close.subscribe(()=>{this.viewRef.clear()})
+  }
 }

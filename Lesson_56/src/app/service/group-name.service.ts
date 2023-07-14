@@ -4,15 +4,5 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GroupNameService {
-
-  constructor() { }
-   groupName = 'Healthy lifestyle';
-  newGroupName = '';
-
-editGroupName() {
-  if (this.newGroupName.trim() !== '') {
-    this.groupName = this.newGroupName;
-  }
-  this.newGroupName = '';
-}
+  groupName = 'Healthy lifestyle';
 }

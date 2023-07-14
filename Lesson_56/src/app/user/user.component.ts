@@ -14,12 +14,13 @@ export class UserComponent {
   @Input() status = ''
   @Input() img = ''
   
-  constructor(
-    public groupNameService: GroupNameService
-    ){}
-    get groupName(): string {
-      return this.groupNameService.groupName;
-    }
+  constructor(public groupNameService: GroupNameService) {}
+
+  changeGroupName(input: any){
+    this.groupNameService.groupName = input.value
+    input.value = ''
+  }
+
   newName = '';
   newStatus = '';
 
