@@ -6,8 +6,6 @@ import { GroupNameService } from '../service/group-name.service';
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
-  providers: [GroupNameService]
-
 })
 export class UserComponent {
   @Input() name = ''
@@ -15,11 +13,6 @@ export class UserComponent {
   @Input() img = ''
   
   constructor(public groupNameService: GroupNameService) {}
-
-  changeGroupName(input: any){
-    this.groupNameService.groupName = input.value
-    input.value = ''
-  }
 
   newName = '';
   newStatus = '';

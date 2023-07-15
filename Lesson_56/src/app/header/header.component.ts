@@ -11,6 +11,7 @@ export class HeaderComponent {
   public groupNameService: GroupNameService,
   ){}
     changeGroupName(input: any){
+      console.log(input.value);
       this.groupNameService.groupName = input.value
       input.value = ''
     }

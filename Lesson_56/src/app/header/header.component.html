@@ -1,7 +1,7 @@
 <div class="body">
     <h1> <b>User group: </b><span>{{groupNameService.groupName}}</span></h1>
     <div class="edit-body">
-        <input type="text" placeholder="Write new group name">
-        <button class="network" (click)="changeGroupName(groupNameService)">Edit</button>
+        <input type="text" placeholder="Write new group name" #groupName>
+        <button class="network" (click)="changeGroupName(groupName)">Edit</button>
     </div>
 </div>
