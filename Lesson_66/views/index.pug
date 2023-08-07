@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/style.css')
+    title Courses
+  body
+  
+    h1 Users
+    form(action="/add" class="add" method="POST")
+      label(for="name") Name:
+      input(id="name" name="name" placeholder="Enter name")
+      label(for="age") Age:
+      input(type="number", min="1", id="age" name="age" placeholder="Enter age")
+      label(for="status") Status:
+      input(id="status" name="status" placeholder="Enter status")
+      label(for="avatar") Link for image:
+      input(id="avatar" name="avatar" placeholder="Enter image link")
+
+ 
+    #courses
+    if courses.length
+      each course in courses
+        .course
+          .img
+            img(src=`${course.avatar}`, alt="")
+          .title #{course.name}
+          .price #{course.age}
+          .description #{course.status}
+          .course-btn
+            a(href=`/edit/${course._id}`)
+              button Edit
+            button(type="button" onclick=`removeCourse('${course._id}')`) Delete
+
+    else 
+      h3 Empty
+script.
+  function removeCourse(courseId) {
+    fetch(`/remove/${courseId}`, { method: 'DELETE' })
+      .then(response => {
+        if (response.ok) {
+          window.location.reload();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      }).catch(error => {
+        console.error('There was an error!', error);
+    });
+  }
